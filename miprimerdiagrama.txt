@@ -1,0 +1,57 @@
+@startuml
+
+title Primer Diagrama Coder
+
+class Negocio{
+
+-direccion
+-nombre
+-horario
+
++abrir()
++cerrar()
+
+}
+
+class Empleado{
+
+-nombre
+-sueldo
+-horario
+-antieguedad
+
++atender()
++cobrar()
++vender()
+
+}
+
+class Producto{
+
+-codigo
+-precio
+
+
++vencer()
+
+}
+
+class Contacto{
+
+-nombre
+-numero
+
++llamar()
++hablar()
+
+}
+
+Negocio "1" *-- "..*"  Producto
+
+Negocio "0..*" *-- "1..*" Empleado
+
+Empleado "1..6" --> "1..*" Contacto
+Empleado "1..6" --> "1..*" Producto 
+
+@enduml
+
